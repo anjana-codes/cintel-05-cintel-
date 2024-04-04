@@ -96,7 +96,7 @@ ui.page_opts(title="Weather Express: Live Data Example", fillable=True)
 # Everything in the sidebar is indented consistently
 with ui.sidebar(position="right", open="open"):
 
-    ui.h2("Penguni's Weather Dashboard", class_="text-center")
+    ui.h2("Winter Springs Weather Dashboard", class_="text-center")
     ui.p(
         "A demonstration of real-time temperature readings in Antarctica.",
         class_="text-center",
@@ -124,8 +124,8 @@ with ui.sidebar(position="right", open="open"):
 
 with ui.layout_columns():
     with ui.value_box(
-        showcase=icon_svg("sun"),
-        theme="bg-gradient-blue-purple",
+        showcase=icon_svg("snowman"),
+        theme="green",
     ):
 
         "Current Temperature"
@@ -205,4 +205,3 @@ with ui.card():
             fig.update_layout(xaxis_title="Time",yaxis_title="Temperature (°C)")
 
         return fig
-
