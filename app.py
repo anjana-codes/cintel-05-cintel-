@@ -62,7 +62,7 @@ def reactive_calc_combined():
     reactive.invalidate_later(UPDATE_INTERVAL_SECS)
 
     # Data generation logic
-    temp = round(random.uniform(-18, -16), 1)
+    temp = round(random.uniform(25, 23), 1)
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     new_dictionary_entry = {"temp":temp, "timestamp":timestamp}
 
@@ -96,10 +96,11 @@ ui.page_opts(title="Weather Express: Live Data Example", fillable=True)
 # Everything in the sidebar is indented consistently
 with ui.sidebar(position="right", open="open"):
 
-    ui.h2("Winter Springs Weather Dashboard", class_="text-center")
+    ui.h2("Winter Springs Weather Dashboard", style="background-color: skyblue", class_="text-center")
     ui.p(
         "A demonstration of real-time temperature readings in Antarctica.",
         class_="text-center",
+        
     )
     ui.hr()
     ui.h6("Links:")
@@ -124,7 +125,7 @@ with ui.sidebar(position="right", open="open"):
 
 with ui.layout_columns():
     with ui.value_box(
-        showcase=icon_svg("snowman"),
+        showcase=icon_svg("sun"),
         theme="green",
     ):
 
@@ -140,7 +141,7 @@ with ui.layout_columns():
 
   
 
-    with ui.card(full_screen=True):
+    with ui.card(full_screen=True, style="background-color: skyblue"):
         ui.card_header("Current Date and Time")
 
         @render.text
@@ -151,7 +152,7 @@ with ui.layout_columns():
 
 
 #with ui.card(full_screen=True, min_height="40%"):
-with ui.card(full_screen=True):
+with ui.card(full_screen=True, style="background-color: skyblue"):
     ui.card_header("Most Recent Readings")
 
     @render.data_frame
@@ -162,7 +163,7 @@ with ui.card(full_screen=True):
         return render.DataGrid( df,width="100%")
 
 with ui.card():
-    ui.card_header("Chart with Current Trend")
+    ui.card_header("Chart with Current Trend", style="background-color: green")
 
     @render_plotly
     def display_plot():
