@@ -43,7 +43,7 @@ UPDATE_INTERVAL_SECS: int = 3
 # This reactive value is a wrapper around a DEQUE of readings
 # --------------------------------------------
 
-DEQUE_SIZE: int = 5
+DEQUE_SIZE: int = 7
 reactive_value_wrapper = reactive.value(deque(maxlen=DEQUE_SIZE))
 
 # --------------------------------------------
@@ -98,7 +98,7 @@ with ui.sidebar(position="right", open="open"):
 
     ui.h2("Winter Springs Weather Dashboard", style="background-color: skyblue", class_="text-center")
     ui.p(
-        "A demonstration of real-time temperature readings in Antarctica.",
+        "A demonstration of real-time temperature readings.",
         class_="text-center",
         
     )
@@ -115,11 +115,6 @@ with ui.sidebar(position="right", open="open"):
         target="_blank",
     )
     ui.a("PyShiny", href="https://shiny.posit.co/py/", target="_blank")
-    ui.a(
-        "PyShiny Express",
-        href="hhttps://shiny.posit.co/blog/posts/shiny-express/",
-        target="_blank",
-    )
 
 # In Shiny Express, everything not in the sidebar is in the main panel
 
